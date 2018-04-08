@@ -5,7 +5,7 @@ Work in progress
 Honestly, we always research and build a scaleable large web application project. A good point to start is modular structure.
 This project is an opinionated architecture for structuring large React/Redux applications.
 
-* Features support in this project
+### Features support in this project
 - React, Redux
 - Modular structure
 - React-router 4
