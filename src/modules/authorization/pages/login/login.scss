@@ -1,0 +1,51 @@
+.wrapper-center-login {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding-top: 15%;
+  background: $main_bg_color;
+  .col-2 {
+    column-count: 1;
+    text-align: center;
+    width: 500px;
+    margin: 60px auto 0 auto;
+  }
+  .form-container {
+    margin-top: 40px;
+    .input {
+      border-radius: 0;
+    }
+    .input-corporate {
+      width: 500px;
+      height: 60px;
+      padding-left: 64px;
+      border: solid 1px #ced3d6;
+      font-size: 20px;
+      font-stretch: condensed;
+      line-height: 1.2;
+      letter-spacing: .6px;
+      text-align: left;
+      color: #333333;
+      &::-webkit-input-placeholder {
+        font-size: 20px;
+      }
+    }
+    .input-password {
+      @extend .input-corporate;
+      width: 96%;
+      &:focus {
+        outline-color: #f48120;
+      }
+    }
+    .input-username {
+      @extend .input-corporate;
+      width: 96%;
+      &:focus {
+        outline-color: #f48120;
+      }
+    }
+    .i-password {
+      margin-top: 15px;
+    }
+  }
+}

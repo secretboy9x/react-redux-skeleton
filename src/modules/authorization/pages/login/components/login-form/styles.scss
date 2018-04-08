@@ -1,0 +1,84 @@
+.login-form {
+  width: 31%;
+  height: 460px;
+  background-color: #fff;
+  border: 1px solid #fff;
+  margin: 0 auto;
+  min-width: 600px;
+  text-align: center;
+  .header-login {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    height: 120px;
+    .logo {
+      width: 15%;
+    }
+    .title {
+      span {
+        color: #39393a;
+        font-size: 40px;
+        line-height: 90px;
+        text-transform: uppercase;
+        font-family: FontBoldItalic;
+        letter-spacing: 2px;
+        padding-top: 14px;
+      }
+    }
+  }
+  .input-form {
+    width: 500px;
+    margin: 0 auto;
+  }
+  div.menu-tab {
+    height: 70px;
+    font-family: FontBold;
+    font-size: 30px;
+    text-transform: uppercase;
+    li {
+      float: left;
+      width: 50%;
+      font-style: italic;
+      color: #84878d;
+      background-color: #5c6067;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      justify-content: center;
+      span {
+        font-family: FontBold;
+      }
+    }
+    li.active {
+      color: #f58220;
+      background-color: #fff;
+      cursor: default;
+    }
+  }
+  .sile-bar-tab {
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style-type: none;
+  }
+  input {
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+  }
+  .button-login-studio {
+    width: 96%;
+    height: 70px;
+    border-radius: 0;
+    border: none;
+    font-size: 28px;
+    text-align: center;
+    color: #ffffff;
+    display: inline-block;
+    background-image: linear-gradient(241deg, #e95707, #f58220);
+    span {
+      font-family: FontBold;
+      letter-spacing: 1.2px;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.app-background {
+  width: 100%;
+  min-height: 100%;
+
+  .app-container {
+    min-height: 100%;
+    position: relative;
+
+    &.auth {
+      .header {
+        background: green;
+        height: 60px;
+        font-size: 30px;
+        color: white;
+      }
+    }
+  }
+}

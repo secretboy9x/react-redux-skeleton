@@ -1,0 +1,14 @@
+{
+  "General.AppName": "React Redux Modular",
+  "General.ServerFetching": "Fetching...",
+  "General.NoSuggestion": "No results found.",
+  "General.NoSuggestion.WithValue": "No results found for {value}.",
+  "General.Table.NoData": "No data to display",
+
+  "Validation.InvalidEmail": "Invalid email address!",
+  "Validation.RequiredField": "This field is required!",
+
+  "Login.PlaceholderUserName": "User Name",
+  "Login.PlaceholderPassword": "Password",
+  "Login.SignInBtn": "SIGN IN"
+}
