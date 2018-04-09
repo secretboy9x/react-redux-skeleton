@@ -23,7 +23,7 @@ const htmlWebpackPlugin = new HtmlWebpackPlugin({
   title: METADATA.title,
   chunksSortMode: 'manual',
   chunks: ['bundle.common', 'bundle', 'react.bundle.1', 'react.bundle.2',
-    'react.bootstrap.bundle', 'redux.bundle', 'app'],
+    'react.bootstrap.bundle', 'redux.bundle', 'main'],
   metadata: METADATA,
   minify: {
     removeComments: true,

@@ -1,4 +1,3 @@
-import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { IntlProvider } from 'react-intl';
@@ -7,21 +6,29 @@ import './assets/sass/app.scss';
 import 'bootstrap';
 import { App } from 'modules/core/pages';
 import { configureStore } from 'common';
+import { AppContainer } from 'react-hot-loader';
 
-import { language, messages } from 'localization';
+import { locale, messages } from 'localization';
 
 const initialState = {};
 const { store, actions } =
   configureStore({ initialState });
 
-let render = () => {
-  const mountNode = document.querySelector('#root');
+const render = Component => {
   ReactDOM.render(
-    <IntlProvider locale={language} messages={messages}>
-      <App
-        store={store}
-        actions={actions} />
-    </IntlProvider>, mountNode);
+    <AppContainer>
+      <IntlProvider locale={locale} messages={messages}>
+        <Component
+          store={store}
+          actions={actions} />
+      </IntlProvider>
+    </AppContainer>,
+    document.getElementById('root'),
+  );
 };
 
-render();
+render(App);
+
+if (module.hot) {
+  render(App);
+}

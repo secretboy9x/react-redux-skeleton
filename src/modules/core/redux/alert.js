@@ -1,6 +1,6 @@
 import { createConstants, createReducer } from 'redux-module-builder';
 
-import { AlertType } from '../components';
+import { AlertType } from '../components/alert';
 
 /**
  * Define alert action constants

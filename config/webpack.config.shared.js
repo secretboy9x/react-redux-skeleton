@@ -45,16 +45,17 @@ const progressBar = new ProgressBarPlugin();
 const htmlElementsPlugin = new HtmlElementsPlugin({
   headTags: require('./head-config.common')
 });
-
+const shareEntries = [
+  'babel-polyfill',
+  helpers.root('src/index.js')
+];
 /*
  * Webpack configuration
  *
  * See: http://webpack.github.io/docs/configuration.html#cli
  */
 module.exports = (options) => ({
-  entry: Object.assign({
-    app: helpers.root('src/index.js')
-  }, options.entry),
+  entry: options.entry ? options.entry.concat(shareEntries) : shareEntries,
   output: options.output,
   module: {
     loaders: [
