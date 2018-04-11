@@ -8,6 +8,11 @@ const METADATA = {
   isDevServer: helpers.isWebpackDevServer()
 };
 
+const devServerInfo = {
+  hostname: 'localhost',
+  port: 8080
+};
+
 /*
 * Plugin: HtmlWebpackPlugin
 * Description: Simplifies creation of HTML files to serve your webpack bundles.
@@ -21,7 +26,7 @@ const htmlWebpackPlugin = new HtmlWebpackPlugin({
   title: METADATA.title,
   chunksSortMode: 'manual',
   chunks: ['bundle.common', 'bundle', 'react.bundle.1', 'react.bundle.2',
-    'react.bootstrap.bundle', 'redux.bundle', 'app'],
+    'react.bootstrap.bundle', 'redux.bundle', 'main'],
   metadata: METADATA
 });
 
@@ -31,9 +36,15 @@ const htmlWebpackPlugin = new HtmlWebpackPlugin({
  * See: http://webpack.github.io/docs/configuration.html#cli
  */
 module.exports = require('./webpack.config.shared')({
+  entry: [
+    'react-hot-loader/patch',
+    `webpack-dev-server/client?http://${devServerInfo.hostname}:${devServerInfo.port}`,
+    'webpack/hot/dev-server'
+  ],
   output: {
     path: helpers.root('src'),
-    filename: '[name].[hash].js'
+    filename: '[name].js',
+    publicPath: '/'
   },
  /**
   * Developer tool to enhance debugging
@@ -45,6 +56,7 @@ module.exports = require('./webpack.config.shared')({
 
   plugins: [
     htmlWebpackPlugin,
+    new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin()
   ],
 /**
@@ -56,8 +68,8 @@ module.exports = require('./webpack.config.shared')({
  * See: https://webpack.github.io/docs/webpack-dev-server.html
  */
   devServer: {
-    port: 8080,
-    host: 'localhost',
+    port: devServerInfo.port,
+    host: devServerInfo.hostname,
     hot: true,
     contentBase: helpers.root('src'),
     stats: 'errors-only',
